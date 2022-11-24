@@ -79,7 +79,6 @@ struct CollectionView: View {
     }
     
     func registerChangeStream() async {
-        // TODO: Clean up any existing change stream
         if let changeStream = changeStream {
             _ = changeStream.kill()
             self.changeStream = nil
@@ -88,11 +87,13 @@ struct CollectionView: View {
             let changeStreamOptions = ChangeStreamOptions(fullDocument: .updateLookup)
             changeStream = try await collection?.watch(options: changeStreamOptions)
             _ = changeStream?.forEach({ changeEvent in
-                latestChangeEvent = changeEvent
-                showingChangeEvent = true
-                Task {
-                    await loadDocs()
-                }
+                withAnimation {
+                    latestChangeEvent = changeEvent
+                    showingChangeEvent = true
+                    Task {
+                        await loadDocs()
+                    }
+                } 
             })
         } catch {
             errorMessage = "Failed to register change stream: \(error.localizedDescription)"

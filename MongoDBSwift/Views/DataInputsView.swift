@@ -31,29 +31,27 @@ struct DataInputsView: View {
             HStack {
                 TextField("Filter key", text: $filterKey)
                     .textFieldStyle(.roundedBorder)
-                    .padding(8)
+                    .padding(4)
                 Spacer()
             }
             HStack {
                 TextField("Filter value", text: $filterValue)
                     .textFieldStyle(.roundedBorder)
-                    .padding(8)
+                    .padding(4)
             }
             HStack {
                 TextField("Sort string", text: $sortField)
                     .textFieldStyle(.roundedBorder)
-                    .padding(8)
-//                Spacer()
+                    .padding(4)
                 Toggle(isOn: $sortAscending) {
                     Text("Sort ascending?")
                 }
-                .padding(8)
-//                Spacer()
+                .padding(4)
             }
             HStack {
                 TextField("Number of documents", value: $docCount, format: .number)
                     .textFieldStyle(.roundedBorder)
-                    .padding(8)
+                    .padding(4)
                 Spacer()
                 Button() {
                     inProgress = true
@@ -64,7 +62,7 @@ struct DataInputsView: View {
                 }
                 .disabled(inProgress)
                 .buttonStyle(.borderedProminent)
-                .padding(8)
+                .padding(4)
             }
         }
     }

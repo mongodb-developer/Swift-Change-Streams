@@ -35,9 +35,8 @@ struct ContentView: View {
             .frame(minWidth: 250)
             if let mongoClient = client?.client {
                 if path.dbName.isEmpty || path.collectionName.isEmpty {
-                    Text("Placeholder view")
+                    Text("Select a database and collection")
                 } else {
-//                    CollectionView(client: mongoClient, dbName: dbName, collectionName: collectionName)
                     CollectionView(client: mongoClient, path: path)
                 }
             } else {

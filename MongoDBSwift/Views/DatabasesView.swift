@@ -30,6 +30,7 @@ struct DatabasesView: View {
                         Image(systemName: "arrow.clockwise.circle")
                     }
                     .disabled(inProgress)
+                    .offset(y: -28)
                 }
                 if let dbs = dbs {
                     List(dbs) { db in
@@ -48,7 +49,8 @@ struct DatabasesView: View {
                         .foregroundColor(.red)
                 }
             }
-            .padding()
+            .padding(.leading, 8)
+            .padding(.trailing, 8)
             if inProgress {
                 ProgressView()
             }

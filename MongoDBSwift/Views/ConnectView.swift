@@ -21,7 +21,9 @@ struct ConnectView: View {
             VStack(spacing: 16) {
                 Spacer()
                 TextField("Nickname", text: $name)
+                    .textFieldStyle(.roundedBorder)
                 TextField("URI", text: $uri)
+                    .textFieldStyle(.roundedBorder)
                 Button(action: connect) {
                     Text("Connect")
                 }
