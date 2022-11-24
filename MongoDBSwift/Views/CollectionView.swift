@@ -21,6 +21,8 @@ struct CollectionView: View {
     @State private var filterValue = ""
     @State private var docCount: Int = 10
     @State private var changeStream: ChangeStream<ChangeStreamEvent<BSONDocument>>?
+    @State private var latestChangeEvent: ChangeStreamEvent<BSONDocument>?
+    @State private var showingChangeEvent = false
     
     var body: some View {
         VStack {
@@ -38,6 +40,11 @@ struct CollectionView: View {
                     .foregroundColor(.red )
             }
         }
+        .sheet(isPresented: $showingChangeEvent, content: {
+            if let latestChangeEvent {
+                ChangeEventView(event: latestChangeEvent)
+            }
+        })
         .onChange(of: path, perform: { path in
             print("Collection name changed to \(path.dbName) - state collectionName = \(path.collectionName).")
             Task {
@@ -78,12 +85,11 @@ struct CollectionView: View {
             self.changeStream = nil
         }
         do {
-            changeStream = try await collection?.watch()
+            let changeStreamOptions = ChangeStreamOptions(fullDocument: .updateLookup)
+            changeStream = try await collection?.watch(options: changeStreamOptions)
             _ = changeStream?.forEach({ changeEvent in
-                print("Received event")
-                print(changeEvent.operationType)
-                print(changeEvent.fullDocument ?? "No fullDocument")
-                print(changeEvent)
+                latestChangeEvent = changeEvent
+                showingChangeEvent = true
                 Task {
                     await loadDocs()
                 }
@@ -94,7 +100,7 @@ struct CollectionView: View {
     }
     
     let monoFont = Font
-        .system(size: 14)
+        .system(size: 12)
         .monospaced()
 }
 
