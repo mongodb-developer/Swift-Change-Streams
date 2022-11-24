@@ -11,9 +11,6 @@ struct ContentView: View {
     @State private var client: MongoClientExt?
     @State private var path = Path()
     
-//    @State private var dbName = ""
-//    @State private var collectionName = ""
-    
     var title: String {
         path.dbName.isEmpty ? "MongoDB Swift" : path.collectionName.isEmpty ? "\(path.dbName)" : "\(path.dbName).\(path.collectionName)"
     }
@@ -24,7 +21,6 @@ struct ContentView: View {
                 if let client {
                     if let mongoClient = client.client {
                         VStack {
-                            Text("Connected to \(client.name)")
                             DisconnectButton(client: self.$client)
                             DatabasesView(client: mongoClient, dbName: $path.dbName, collectionName: $path.collectionName)
                             Spacer()

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A033147292FADCC006787D0 /* DataInputsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A033146292FADCC006787D0 /* DataInputsView.swift */; };
+		0A033149292FD2E3006787D0 /* AnyDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A033148292FD2E3006787D0 /* AnyDoc.swift */; };
 		0AA38B7C292E2189008C9A00 /* MongoDBSwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA38B7B292E2189008C9A00 /* MongoDBSwiftApp.swift */; };
 		0AA38B7E292E2189008C9A00 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA38B7D292E2189008C9A00 /* ContentView.swift */; };
 		0AA38B80292E218B008C9A00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AA38B7F292E218B008C9A00 /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		0A033146292FADCC006787D0 /* DataInputsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataInputsView.swift; sourceTree = "<group>"; };
+		0A033148292FD2E3006787D0 /* AnyDoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyDoc.swift; sourceTree = "<group>"; };
 		0AA38B78292E2189008C9A00 /* MongoDBSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MongoDBSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AA38B7B292E2189008C9A00 /* MongoDBSwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MongoDBSwiftApp.swift; sourceTree = "<group>"; };
 		0AA38B7D292E2189008C9A00 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			children = (
 				0AA38B92292E2796008C9A00 /* MongoClientExt.swift */,
 				0AA38BB0292F0034008C9A00 /* Path.swift */,
+				0A033148292FD2E3006787D0 /* AnyDoc.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 				0AA38B91292E24B1008C9A00 /* ConnectView.swift in Sources */,
 				0AA38BA5292EDA42008C9A00 /* BSONDocument.swift in Sources */,
 				0A033147292FADCC006787D0 /* DataInputsView.swift in Sources */,
+				0A033149292FD2E3006787D0 /* AnyDoc.swift in Sources */,
 				0AA38B9C292E9396008C9A00 /* CollectionsView.swift in Sources */,
 				0AA38B7E292E2189008C9A00 /* ContentView.swift in Sources */,
 				0AA38BA9292EDFD1008C9A00 /* JSONView.swift in Sources */,

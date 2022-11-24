@@ -20,6 +20,7 @@ struct CollectionView: View {
     @State private var filterKey = ""
     @State private var filterValue = ""
     @State private var docCount: Int = 10
+    @State private var changeStream: ChangeStream<ChangeStreamEvent<BSONDocument>>?
     
     var body: some View {
         VStack {
@@ -39,20 +40,24 @@ struct CollectionView: View {
         }
         .onChange(of: path, perform: { path in
             print("Collection name changed to \(path.dbName) - state collectionName = \(path.collectionName).")
-            Task { await loadDocs() }
+            Task {
+                await loadDocs(path)
+                await registerChangeStream()
+            }
         })
         .task {
             await loadDocs()
+            await registerChangeStream()
         }
     }
     
-    func loadDocs() async {
+    func loadDocs(_ path: Path? = nil) async {
         docs = [BSONDocument]()
         if !errorMessage.isEmpty {
             errorMessage = ""
         }
-        let db = client.db(path.dbName)
-        collection = db.collection(path.collectionName)
+        let db = client.db(path?.dbName ?? self.path.dbName)
+        collection = db.collection(path?.collectionName ?? self.path.collectionName)
         let query: BSONDocument = filterKey.isEmpty || filterValue.isEmpty ? [:] : [filterKey: BSON(stringLiteral: filterValue)]
         let options = FindOptions(limit: docCount, sort: [sortField: sortAscending ? 1 : -1])
         if let collection = collection {
@@ -63,6 +68,24 @@ struct CollectionView: View {
             } catch {
                 errorMessage = "Failed to read collection documents: \(error.localizedDescription)"
             }
+        }
+    }
+    
+    func registerChangeStream() async {
+        // TODO: Clean up any existing change stream
+        if let changeStream = changeStream {
+            _ = changeStream.kill()
+            self.changeStream = nil
+        }
+        do {
+            changeStream = try await collection?.watch()
+            _ = changeStream?.forEach({ changeEvent in
+                print("Received event")
+                print(changeEvent.operationType)
+                print(changeEvent.fullDocument ?? "No fullDocument")
+            })
+        } catch {
+            errorMessage = "Failed to register change stream: \(error.localizedDescription)"
         }
     }
     
