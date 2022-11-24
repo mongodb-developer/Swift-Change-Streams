@@ -1,0 +1,448 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0AA38B7C292E2189008C9A00 /* MongoDBSwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA38B7B292E2189008C9A00 /* MongoDBSwiftApp.swift */; };
+		0AA38B7E292E2189008C9A00 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA38B7D292E2189008C9A00 /* ContentView.swift */; };
+		0AA38B80292E218B008C9A00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AA38B7F292E218B008C9A00 /* Assets.xcassets */; };
+		0AA38B83292E218B008C9A00 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AA38B82292E218B008C9A00 /* Preview Assets.xcassets */; };
+		0AA38B8C292E21F4008C9A00 /* MongoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 0AA38B8B292E21F4008C9A00 /* MongoSwift */; };
+		0AA38B8E292E21F4008C9A00 /* MongoSwiftSync in Frameworks */ = {isa = PBXBuildFile; productRef = 0AA38B8D292E21F4008C9A00 /* MongoSwiftSync */; };
+		0AA38B91292E24B1008C9A00 /* ConnectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA38B90292E24B1008C9A00 /* ConnectView.swift */; };
+		0AA38B93292E2796008C9A00 /* MongoClientExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA38B92292E2796008C9A00 /* MongoClientExt.swift */; };
+		0AA38B98292E2DB4008C9A00 /* DisconnectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA38B97292E2DB4008C9A00 /* DisconnectButton.swift */; };
+		0AA38B9A292E85AD008C9A00 /* DatabasesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA38B99292E85AD008C9A00 /* DatabasesView.swift */; };
+		0AA38B9C292E9396008C9A00 /* CollectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA38B9B292E9396008C9A00 /* CollectionsView.swift */; };
+		0AA38B9E292EBBE3008C9A00 /* DatabaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA38B9D292EBBE3008C9A00 /* DatabaseView.swift */; };
+		0AA38BA0292ECCE2008C9A00 /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA38B9F292ECCE2008C9A00 /* CollectionView.swift */; };
+		0AA38BA2292ED5A9008C9A00 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA38BA1292ED5A9008C9A00 /* Data.swift */; };
+		0AA38BA5292EDA42008C9A00 /* BSONDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA38BA4292EDA42008C9A00 /* BSONDocument.swift */; };
+		0AA38BA9292EDFD1008C9A00 /* JSONView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA38BA8292EDFD1008C9A00 /* JSONView.swift */; };
+		0AA38BAB292EE180008C9A00 /* ZoomedJSONView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA38BAA292EE180008C9A00 /* ZoomedJSONView.swift */; };
+		0AA38BB1292F0034008C9A00 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA38BB0292F0034008C9A00 /* Path.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0AA38B78292E2189008C9A00 /* MongoDBSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MongoDBSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AA38B7B292E2189008C9A00 /* MongoDBSwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MongoDBSwiftApp.swift; sourceTree = "<group>"; };
+		0AA38B7D292E2189008C9A00 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0AA38B7F292E218B008C9A00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0AA38B82292E218B008C9A00 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0AA38B84292E218B008C9A00 /* MongoDBSwift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MongoDBSwift.entitlements; sourceTree = "<group>"; };
+		0AA38B90292E24B1008C9A00 /* ConnectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectView.swift; sourceTree = "<group>"; };
+		0AA38B92292E2796008C9A00 /* MongoClientExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MongoClientExt.swift; sourceTree = "<group>"; };
+		0AA38B97292E2DB4008C9A00 /* DisconnectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisconnectButton.swift; sourceTree = "<group>"; };
+		0AA38B99292E85AD008C9A00 /* DatabasesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabasesView.swift; sourceTree = "<group>"; };
+		0AA38B9B292E9396008C9A00 /* CollectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsView.swift; sourceTree = "<group>"; };
+		0AA38B9D292EBBE3008C9A00 /* DatabaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseView.swift; sourceTree = "<group>"; };
+		0AA38B9F292ECCE2008C9A00 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		0AA38BA1292ED5A9008C9A00 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		0AA38BA4292EDA42008C9A00 /* BSONDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSONDocument.swift; sourceTree = "<group>"; };
+		0AA38BA8292EDFD1008C9A00 /* JSONView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONView.swift; sourceTree = "<group>"; };
+		0AA38BAA292EE180008C9A00 /* ZoomedJSONView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomedJSONView.swift; sourceTree = "<group>"; };
+		0AA38BB0292F0034008C9A00 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0AA38B75292E2189008C9A00 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AA38B8E292E21F4008C9A00 /* MongoSwiftSync in Frameworks */,
+				0AA38B8C292E21F4008C9A00 /* MongoSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0AA38B6F292E2189008C9A00 = {
+			isa = PBXGroup;
+			children = (
+				0AA38B7A292E2189008C9A00 /* MongoDBSwift */,
+				0AA38B79292E2189008C9A00 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0AA38B79292E2189008C9A00 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0AA38B78292E2189008C9A00 /* MongoDBSwift.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0AA38B7A292E2189008C9A00 /* MongoDBSwift */ = {
+			isa = PBXGroup;
+			children = (
+				0AA38B7B292E2189008C9A00 /* MongoDBSwiftApp.swift */,
+				0AA38B94292E2A01008C9A00 /* Model */,
+				0AA38B8F292E249C008C9A00 /* Views */,
+				0AA38BA3292ED5B7008C9A00 /* Helpers */,
+				0AA38B7F292E218B008C9A00 /* Assets.xcassets */,
+				0AA38B84292E218B008C9A00 /* MongoDBSwift.entitlements */,
+				0AA38B81292E218B008C9A00 /* Preview Content */,
+			);
+			path = MongoDBSwift;
+			sourceTree = "<group>";
+		};
+		0AA38B81292E218B008C9A00 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				0AA38B82292E218B008C9A00 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0AA38B8F292E249C008C9A00 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0AA38B7D292E2189008C9A00 /* ContentView.swift */,
+				0AA38B90292E24B1008C9A00 /* ConnectView.swift */,
+				0AA38B97292E2DB4008C9A00 /* DisconnectButton.swift */,
+				0AA38B99292E85AD008C9A00 /* DatabasesView.swift */,
+				0AA38B9D292EBBE3008C9A00 /* DatabaseView.swift */,
+				0AA38B9B292E9396008C9A00 /* CollectionsView.swift */,
+				0AA38B9F292ECCE2008C9A00 /* CollectionView.swift */,
+				0AA38BA8292EDFD1008C9A00 /* JSONView.swift */,
+				0AA38BAA292EE180008C9A00 /* ZoomedJSONView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0AA38B94292E2A01008C9A00 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0AA38B92292E2796008C9A00 /* MongoClientExt.swift */,
+				0AA38BB0292F0034008C9A00 /* Path.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0AA38BA3292ED5B7008C9A00 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0AA38BA1292ED5A9008C9A00 /* Data.swift */,
+				0AA38BA4292EDA42008C9A00 /* BSONDocument.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0AA38B77292E2189008C9A00 /* MongoDBSwift */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0AA38B87292E218B008C9A00 /* Build configuration list for PBXNativeTarget "MongoDBSwift" */;
+			buildPhases = (
+				0AA38B74292E2189008C9A00 /* Sources */,
+				0AA38B75292E2189008C9A00 /* Frameworks */,
+				0AA38B76292E2189008C9A00 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MongoDBSwift;
+			packageProductDependencies = (
+				0AA38B8B292E21F4008C9A00 /* MongoSwift */,
+				0AA38B8D292E21F4008C9A00 /* MongoSwiftSync */,
+			);
+			productName = MongoDBSwift;
+			productReference = 0AA38B78292E2189008C9A00 /* MongoDBSwift.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0AA38B70292E2189008C9A00 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					0AA38B77292E2189008C9A00 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+				};
+			};
+			buildConfigurationList = 0AA38B73292E2189008C9A00 /* Build configuration list for PBXProject "MongoDBSwift" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0AA38B6F292E2189008C9A00;
+			packageReferences = (
+				0AA38B8A292E21F4008C9A00 /* XCRemoteSwiftPackageReference "mongo-swift-driver" */,
+			);
+			productRefGroup = 0AA38B79292E2189008C9A00 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0AA38B77292E2189008C9A00 /* MongoDBSwift */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0AA38B76292E2189008C9A00 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AA38B83292E218B008C9A00 /* Preview Assets.xcassets in Resources */,
+				0AA38B80292E218B008C9A00 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0AA38B74292E2189008C9A00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AA38BA0292ECCE2008C9A00 /* CollectionView.swift in Sources */,
+				0AA38BA2292ED5A9008C9A00 /* Data.swift in Sources */,
+				0AA38B91292E24B1008C9A00 /* ConnectView.swift in Sources */,
+				0AA38BA5292EDA42008C9A00 /* BSONDocument.swift in Sources */,
+				0AA38B9C292E9396008C9A00 /* CollectionsView.swift in Sources */,
+				0AA38B7E292E2189008C9A00 /* ContentView.swift in Sources */,
+				0AA38BA9292EDFD1008C9A00 /* JSONView.swift in Sources */,
+				0AA38BAB292EE180008C9A00 /* ZoomedJSONView.swift in Sources */,
+				0AA38BB1292F0034008C9A00 /* Path.swift in Sources */,
+				0AA38B7C292E2189008C9A00 /* MongoDBSwiftApp.swift in Sources */,
+				0AA38B93292E2796008C9A00 /* MongoClientExt.swift in Sources */,
+				0AA38B9E292EBBE3008C9A00 /* DatabaseView.swift in Sources */,
+				0AA38B98292E2DB4008C9A00 /* DisconnectButton.swift in Sources */,
+				0AA38B9A292E85AD008C9A00 /* DatabasesView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		0AA38B85292E218B008C9A00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0AA38B86292E218B008C9A00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		0AA38B88292E218B008C9A00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MongoDBSwift/MongoDBSwift.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MongoDBSwift/Preview Content\"";
+				DEVELOPMENT_TEAM = CV5PJSAH7N;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clusterdb.MongoDBSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		0AA38B89292E218B008C9A00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MongoDBSwift/MongoDBSwift.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MongoDBSwift/Preview Content\"";
+				DEVELOPMENT_TEAM = CV5PJSAH7N;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.clusterdb.MongoDBSwift;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0AA38B73292E2189008C9A00 /* Build configuration list for PBXProject "MongoDBSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AA38B85292E218B008C9A00 /* Debug */,
+				0AA38B86292E218B008C9A00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0AA38B87292E218B008C9A00 /* Build configuration list for PBXNativeTarget "MongoDBSwift" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AA38B88292E218B008C9A00 /* Debug */,
+				0AA38B89292E218B008C9A00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0AA38B8A292E21F4008C9A00 /* XCRemoteSwiftPackageReference "mongo-swift-driver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mongodb/mongo-swift-driver/";
+			requirement = {
+				kind = exactVersion;
+				version = 1.3.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0AA38B8B292E21F4008C9A00 /* MongoSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0AA38B8A292E21F4008C9A00 /* XCRemoteSwiftPackageReference "mongo-swift-driver" */;
+			productName = MongoSwift;
+		};
+		0AA38B8D292E21F4008C9A00 /* MongoSwiftSync */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0AA38B8A292E21F4008C9A00 /* XCRemoteSwiftPackageReference "mongo-swift-driver" */;
+			productName = MongoSwiftSync;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 0AA38B70292E2189008C9A00 /* Project object */;
+}
