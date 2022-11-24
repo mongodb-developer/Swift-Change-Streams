@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-//import MongoSwiftSync
 import MongoSwift
 
 struct CollectionsView: View {

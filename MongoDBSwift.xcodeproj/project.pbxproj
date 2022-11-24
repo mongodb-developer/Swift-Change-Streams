@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A033147292FADCC006787D0 /* DataInputsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A033146292FADCC006787D0 /* DataInputsView.swift */; };
 		0AA38B7C292E2189008C9A00 /* MongoDBSwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA38B7B292E2189008C9A00 /* MongoDBSwiftApp.swift */; };
 		0AA38B7E292E2189008C9A00 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA38B7D292E2189008C9A00 /* ContentView.swift */; };
 		0AA38B80292E218B008C9A00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AA38B7F292E218B008C9A00 /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A033146292FADCC006787D0 /* DataInputsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataInputsView.swift; sourceTree = "<group>"; };
 		0AA38B78292E2189008C9A00 /* MongoDBSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MongoDBSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AA38B7B292E2189008C9A00 /* MongoDBSwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MongoDBSwiftApp.swift; sourceTree = "<group>"; };
 		0AA38B7D292E2189008C9A00 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				0AA38B9D292EBBE3008C9A00 /* DatabaseView.swift */,
 				0AA38B9B292E9396008C9A00 /* CollectionsView.swift */,
 				0AA38B9F292ECCE2008C9A00 /* CollectionView.swift */,
+				0A033146292FADCC006787D0 /* DataInputsView.swift */,
 				0AA38BA8292EDFD1008C9A00 /* JSONView.swift */,
 				0AA38BAA292EE180008C9A00 /* ZoomedJSONView.swift */,
 			);
@@ -214,6 +217,7 @@
 				0AA38BA2292ED5A9008C9A00 /* Data.swift in Sources */,
 				0AA38B91292E24B1008C9A00 /* ConnectView.swift in Sources */,
 				0AA38BA5292EDA42008C9A00 /* BSONDocument.swift in Sources */,
+				0A033147292FADCC006787D0 /* DataInputsView.swift in Sources */,
 				0AA38B9C292E9396008C9A00 /* CollectionsView.swift in Sources */,
 				0AA38B7E292E2189008C9A00 /* ContentView.swift in Sources */,
 				0AA38BA9292EDFD1008C9A00 /* JSONView.swift in Sources */,

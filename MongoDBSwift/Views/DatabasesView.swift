@@ -39,8 +39,6 @@ struct DatabasesView: View {
                             selectedDbName: $dbName,
                             selectedCollectioName: $collectionName
                         )
-//                        Text(db.name)
-//                        CollectionsView(client: client, dbName: db.name)
                     }
                     .listStyle(.sidebar)
                 }
