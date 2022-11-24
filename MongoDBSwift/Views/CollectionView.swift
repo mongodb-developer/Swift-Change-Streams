@@ -83,6 +83,10 @@ struct CollectionView: View {
                 print("Received event")
                 print(changeEvent.operationType)
                 print(changeEvent.fullDocument ?? "No fullDocument")
+                print(changeEvent)
+                Task {
+                    await loadDocs()
+                }
             })
         } catch {
             errorMessage = "Failed to register change stream: \(error.localizedDescription)"
