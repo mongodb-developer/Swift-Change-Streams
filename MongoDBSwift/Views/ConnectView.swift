@@ -49,7 +49,6 @@ struct ConnectView: View {
         do {
             client = try MongoClientExt(name: name, uri: uri)
             inProgress = false
-            print("Connected to \(uri)")
         } catch {
             inProgress = false
             errorMessage = "Failed to connect to \(name): \(error.localizedDescription)"

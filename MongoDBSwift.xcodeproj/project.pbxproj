@@ -10,6 +10,10 @@
 		0A033147292FADCC006787D0 /* DataInputsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A033146292FADCC006787D0 /* DataInputsView.swift */; };
 		0A033149292FD2E3006787D0 /* AnyDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A033148292FD2E3006787D0 /* AnyDoc.swift */; };
 		0A03314B292FE21E006787D0 /* ChangeEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A03314A292FE21E006787D0 /* ChangeEventView.swift */; };
+		0A03318E2934FB66006787D0 /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A03318D2934FB66006787D0 /* Basket.swift */; };
+		0A0331902934FBEC006787D0 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A03318F2934FBEC006787D0 /* Item.swift */; };
+		0A0331942934FC4D006787D0 /* BasketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0331932934FC4D006787D0 /* BasketView.swift */; };
+		0A03319629350334006787D0 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A03319529350334006787D0 /* ItemView.swift */; };
 		0AA38B7C292E2189008C9A00 /* MongoDBSwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA38B7B292E2189008C9A00 /* MongoDBSwiftApp.swift */; };
 		0AA38B7E292E2189008C9A00 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA38B7D292E2189008C9A00 /* ContentView.swift */; };
 		0AA38B80292E218B008C9A00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AA38B7F292E218B008C9A00 /* Assets.xcassets */; };
@@ -34,6 +38,10 @@
 		0A033146292FADCC006787D0 /* DataInputsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataInputsView.swift; sourceTree = "<group>"; };
 		0A033148292FD2E3006787D0 /* AnyDoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyDoc.swift; sourceTree = "<group>"; };
 		0A03314A292FE21E006787D0 /* ChangeEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEventView.swift; sourceTree = "<group>"; };
+		0A03318D2934FB66006787D0 /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
+		0A03318F2934FBEC006787D0 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		0A0331932934FC4D006787D0 /* BasketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketView.swift; sourceTree = "<group>"; };
+		0A03319529350334006787D0 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		0AA38B78292E2189008C9A00 /* MongoDBSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MongoDBSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AA38B7B292E2189008C9A00 /* MongoDBSwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MongoDBSwiftApp.swift; sourceTree = "<group>"; };
 		0AA38B7D292E2189008C9A00 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -119,6 +127,8 @@
 				0AA38BA8292EDFD1008C9A00 /* JSONView.swift */,
 				0AA38BAA292EE180008C9A00 /* ZoomedJSONView.swift */,
 				0A03314A292FE21E006787D0 /* ChangeEventView.swift */,
+				0A0331932934FC4D006787D0 /* BasketView.swift */,
+				0A03319529350334006787D0 /* ItemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -129,6 +139,8 @@
 				0AA38B92292E2796008C9A00 /* MongoClientExt.swift */,
 				0AA38BB0292F0034008C9A00 /* Path.swift */,
 				0A033148292FD2E3006787D0 /* AnyDoc.swift */,
+				0A03318D2934FB66006787D0 /* Basket.swift */,
+				0A03318F2934FBEC006787D0 /* Item.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -219,9 +231,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A0331942934FC4D006787D0 /* BasketView.swift in Sources */,
 				0AA38BA0292ECCE2008C9A00 /* CollectionView.swift in Sources */,
 				0AA38BA2292ED5A9008C9A00 /* Data.swift in Sources */,
 				0AA38B91292E24B1008C9A00 /* ConnectView.swift in Sources */,
+				0A03319629350334006787D0 /* ItemView.swift in Sources */,
 				0AA38BA5292EDA42008C9A00 /* BSONDocument.swift in Sources */,
 				0A033147292FADCC006787D0 /* DataInputsView.swift in Sources */,
 				0A033149292FD2E3006787D0 /* AnyDoc.swift in Sources */,
@@ -233,7 +247,9 @@
 				0AA38B7C292E2189008C9A00 /* MongoDBSwiftApp.swift in Sources */,
 				0AA38B93292E2796008C9A00 /* MongoClientExt.swift in Sources */,
 				0AA38B9E292EBBE3008C9A00 /* DatabaseView.swift in Sources */,
+				0A0331902934FBEC006787D0 /* Item.swift in Sources */,
 				0A03314B292FE21E006787D0 /* ChangeEventView.swift in Sources */,
+				0A03318E2934FB66006787D0 /* Basket.swift in Sources */,
 				0AA38B98292E2DB4008C9A00 /* DisconnectButton.swift in Sources */,
 				0AA38B9A292E85AD008C9A00 /* DatabasesView.swift in Sources */,
 			);

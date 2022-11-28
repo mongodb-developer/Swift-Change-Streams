@@ -24,6 +24,8 @@ struct CollectionView: View {
     @State private var latestChangeEvent: ChangeStreamEvent<BSONDocument>?
     @State private var showingChangeEvent = false
     
+    
+    
     var body: some View {
         VStack {
             DataInputsView(sortField: $sortField, sortAscending: $sortAscending, filterKey: $filterKey, filterValue: $filterValue, docCount: $docCount) {
@@ -32,7 +34,30 @@ struct CollectionView: View {
                 }
             }
             List(docs, id: \.hashValue) { doc in
-                JSONView(doc: doc)
+                if path.dbName == "Single" && path.collectionName == "Collection" {
+                    // This codepath is here to show how the Swift driver can be used with
+                    // MongoDB's single collection pattern. With this pattern, documents with
+                    // different shapes are stored in the same collection - each with a field
+                    // named "type" which indicates what shape the structure should match. The
+                    // pattern is also referred to as "polymorphic collections"
+                    
+                    if let type = doc["type"] {
+                        switch type {
+                        case "basket":
+                            if let basket = basket(doc: doc) {
+                                BasketView(basket: basket)
+                            }
+                        case "item":
+                            if let item = item(doc: doc) {
+                                ItemView(item: item)
+                            }
+                        default:
+                            Text("Unknown doc type")
+                        }
+                    }
+                } else {
+                    JSONView(doc: doc)
+                }
             }
             Spacer()
             if !errorMessage.isEmpty {
@@ -46,7 +71,6 @@ struct CollectionView: View {
             }
         })
         .onChange(of: path, perform: { path in
-            print("Collection name changed to \(path.dbName) - state collectionName = \(path.collectionName).")
             Task {
                 await loadDocs(path)
                 await registerChangeStream()
@@ -55,6 +79,24 @@ struct CollectionView: View {
         .task {
             await loadDocs()
             await registerChangeStream()
+        }
+    }
+    
+    private func basket(doc: BSONDocument) -> Basket? {
+        do {
+            return try BSONDecoder().decode(Basket.self, from: doc)
+        } catch {
+            print("Failed to convert BSON to a Basket: \(error.localizedDescription)")
+            return nil
+        }
+    }
+    
+    private func item(doc: BSONDocument) -> Item? {
+        do {
+            return try BSONDecoder().decode(Item.self, from: doc)
+        } catch {
+            print("Failed to convert BSON to a Item: \(error.localizedDescription)")
+            return nil
         }
     }
     
@@ -93,7 +135,7 @@ struct CollectionView: View {
                     Task {
                         await loadDocs()
                     }
-                } 
+                }
             })
         } catch {
             errorMessage = "Failed to register change stream: \(error.localizedDescription)"
