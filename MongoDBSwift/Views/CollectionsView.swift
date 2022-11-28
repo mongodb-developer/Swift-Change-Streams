@@ -65,7 +65,6 @@ struct CollectionsView: View {
             errorMessage = "Failed to list collections: \(error.localizedDescription)"
         }
         inProgress = false
-        print("\(self.collections.count) collections in \(dbName)")
     }
 }
 
