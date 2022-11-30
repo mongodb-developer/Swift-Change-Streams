@@ -20,6 +20,7 @@ struct JSONView: View {
                 .padding()
                 .background(.secondary)
                 .clipShape(RoundedRectangle(cornerRadius: 25))
+                .textSelection(.enabled)
             VStack {
                 HStack {
                     Spacer()

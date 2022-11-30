@@ -28,6 +28,7 @@ struct ZoomedJSONView: View {
             ScrollView {
                 Text(doc.toPrettyJSONString())
                     .font(monoFont)
+                    .textSelection(.enabled)
             }
         }
         .padding()
