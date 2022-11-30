@@ -18,6 +18,11 @@ struct CollectionView: View {
     @State private var sortField = "_id"
     @State private var sortAscending = false
     @State private var filterKey = ""
+//    @State private var queryValue = QueryValue.string("")
+    @State private var filterType = "String"
+    @State private var filterStringValue = ""
+    @State private var filterIntValue = 0
+    @State private var filterDoubleValue: Double = 0.0
     @State private var filterValue = ""
     @State private var docCount: Int = 10
     @State private var changeStream: ChangeStream<ChangeStreamEvent<BSONDocument>>?
@@ -27,11 +32,23 @@ struct CollectionView: View {
     
     var body: some View {
         VStack {
-            DataInputsView(sortField: $sortField, sortAscending: $sortAscending, filterKey: $filterKey, filterValue: $filterValue, docCount: $docCount) {
-                Task {
-                    await loadDocs()
+            DataInputsView(
+                sortField: $sortField,
+                sortAscending: $sortAscending,
+//                queryValue: $queryValue,
+                filterKey: $filterKey,
+                filterType: $filterType,
+                filterStringValue: $filterStringValue,
+                filterIntValue: $filterIntValue,
+                filterDoubleValue: $filterDoubleValue,
+//                filterValue: $filterValue,
+                docCount: $docCount,
+                refreshData: {
+                    Task {
+                        await loadDocs()
+                    }
                 }
-            }
+            )
             ZStack {
                 List(docs, id: \.hashValue) { doc in
                     if path.dbName == "Single" && path.collectionName == "Collection" {
@@ -78,6 +95,8 @@ struct CollectionView: View {
             Task {
                 filterKey = ""
                 filterValue = ""
+//                queryValue = .string("")
+                filterType = "String"
                 sortField = "_id"
                 sortAscending = false
                 await loadDocs(path)
@@ -116,7 +135,34 @@ struct CollectionView: View {
         }
         let db = client.db(path?.dbName ?? self.path.dbName)
         collection = db.collection(path?.collectionName ?? self.path.collectionName)
-        let query: BSONDocument = filterKey.isEmpty || filterValue.isEmpty ? [:] : [filterKey: BSON(stringLiteral: filterValue)]
+        var bsonFilterValue: BSON?
+//        if !filterKey.isEmpty {
+//            switch queryValue {
+//            case .string(let string):
+//                bsonFilterValue = BSON(stringLiteral: string)
+//            case .int(let int):
+//                bsonFilterValue = BSON(int)
+//            case .float(let float):
+//                bsonFilterValue = BSON(floatLiteral: Double(float))
+//            }
+//        }
+        if !filterKey.isEmpty {
+            switch filterType {
+            case "String":
+                bsonFilterValue = BSON(stringLiteral: filterStringValue)
+            case "Int":
+                bsonFilterValue = BSON(integerLiteral: filterIntValue)
+            case "Float":
+                bsonFilterValue = BSON(floatLiteral: filterDoubleValue)
+            default:
+                print("Unknown filter type")
+            }
+        }
+        var query: BSONDocument = [:]
+        if let bsonFilterValue {
+            query = [filterKey: bsonFilterValue]
+        }
+//        let query: BSONDocument = filterKey.isEmpty || filterValue.isEmpty ? [:] : [filterKey: filterKey]
         let options = FindOptions(limit: docCount, sort: [sortField: sortAscending ? 1 : -1])
         if let collection = collection {
             do {

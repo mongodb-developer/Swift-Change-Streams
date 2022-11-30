@@ -60,9 +60,11 @@ struct ConnectView: View {
             errorMessage = ""
         }
         do {
-            client = try MongoClientExt(name: name, uri: uri)
+            let inProgressClient = try MongoClientExt(name: name, uri: uri)
+            client = inProgressClient
             inProgress = false
         } catch {
+            client = nil
             inProgress = false
             errorMessage = "Failed to connect to \(name): \(error.localizedDescription)"
         }
