@@ -15,6 +15,8 @@ struct ConnectView: View {
     
     @State private var errorMessage = ""
     @State private var inProgress = false
+    @State private var isEditing = false
+    @State private var maskedURI = ""
     
     var body: some View {
         ZStack {
@@ -22,8 +24,17 @@ struct ConnectView: View {
                 Spacer()
                 TextField("Nickname", text: $name)
                     .textFieldStyle(.roundedBorder)
-                TextField("URI", text: $uri)
-                    .textFieldStyle(.roundedBorder)
+                HStack {
+                    TextField("URI", text: isEditing ? $uri : $maskedURI)
+                        .textFieldStyle(.roundedBorder)
+                        .disabled(!isEditing)
+                    Button {
+                        isEditing = true
+                    } label: {
+                        Label("Edit", systemImage: "pencil")
+                    }
+                    .disabled(isEditing)
+                }
                 Button(action: connect) {
                     Text("Connect")
                 }
@@ -38,10 +49,12 @@ struct ConnectView: View {
                 ProgressView()
             }
         }
+        .onAppear(perform: maskPassword)
         .padding()
     }
     
     private func connect() {
+        isEditing = false
         inProgress = true
         if !errorMessage.isEmpty {
             errorMessage = ""
@@ -53,6 +66,10 @@ struct ConnectView: View {
             inProgress = false
             errorMessage = "Failed to connect to \(name): \(error.localizedDescription)"
         }
+    }
+    
+    private func maskPassword() {
+        maskedURI = uri.maskPassword()
     }
     
 }

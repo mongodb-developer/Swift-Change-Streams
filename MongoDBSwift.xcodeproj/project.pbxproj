@@ -14,6 +14,7 @@
 		0A0331902934FBEC006787D0 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A03318F2934FBEC006787D0 /* Item.swift */; };
 		0A0331942934FC4D006787D0 /* BasketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0331932934FC4D006787D0 /* BasketView.swift */; };
 		0A03319629350334006787D0 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A03319529350334006787D0 /* ItemView.swift */; };
+		0A3549B2293774EC008B4E69 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3549B1293774EC008B4E69 /* String.swift */; };
 		0AA38B7C292E2189008C9A00 /* MongoDBSwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA38B7B292E2189008C9A00 /* MongoDBSwiftApp.swift */; };
 		0AA38B7E292E2189008C9A00 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA38B7D292E2189008C9A00 /* ContentView.swift */; };
 		0AA38B80292E218B008C9A00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AA38B7F292E218B008C9A00 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 		0A03318F2934FBEC006787D0 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		0A0331932934FC4D006787D0 /* BasketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketView.swift; sourceTree = "<group>"; };
 		0A03319529350334006787D0 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		0A3549B1293774EC008B4E69 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		0AA38B78292E2189008C9A00 /* MongoDBSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MongoDBSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AA38B7B292E2189008C9A00 /* MongoDBSwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MongoDBSwiftApp.swift; sourceTree = "<group>"; };
 		0AA38B7D292E2189008C9A00 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			children = (
 				0AA38BA1292ED5A9008C9A00 /* Data.swift */,
 				0AA38BA4292EDA42008C9A00 /* BSONDocument.swift */,
+				0A3549B1293774EC008B4E69 /* String.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				0AA38B7E292E2189008C9A00 /* ContentView.swift in Sources */,
 				0AA38BA9292EDFD1008C9A00 /* JSONView.swift in Sources */,
 				0AA38BAB292EE180008C9A00 /* ZoomedJSONView.swift in Sources */,
+				0A3549B2293774EC008B4E69 /* String.swift in Sources */,
 				0AA38BB1292F0034008C9A00 /* Path.swift in Sources */,
 				0AA38B7C292E2189008C9A00 /* MongoDBSwiftApp.swift in Sources */,
 				0AA38B93292E2796008C9A00 /* MongoClientExt.swift in Sources */,
