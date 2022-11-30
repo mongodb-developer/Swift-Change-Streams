@@ -23,8 +23,7 @@ struct CollectionView: View {
     @State private var changeStream: ChangeStream<ChangeStreamEvent<BSONDocument>>?
     @State private var latestChangeEvent: ChangeStreamEvent<BSONDocument>?
     @State private var showingChangeEvent = false
-    
-    
+    @State private var inProgress = false
     
     var body: some View {
         VStack {
@@ -33,30 +32,35 @@ struct CollectionView: View {
                     await loadDocs()
                 }
             }
-            List(docs, id: \.hashValue) { doc in
-                if path.dbName == "Single" && path.collectionName == "Collection" {
-                    // This codepath is here to show how the Swift driver can be used with
-                    // MongoDB's single collection pattern. With this pattern, documents with
-                    // different shapes are stored in the same collection - each with a field
-                    // named "type" which indicates what shape the structure should match. The
-                    // pattern is also referred to as "polymorphic collections"
-                    
-                    if let type = doc["type"] {
-                        switch type {
-                        case "basket":
-                            if let basket = basket(doc: doc) {
-                                BasketView(basket: basket)
+            ZStack {
+                List(docs, id: \.hashValue) { doc in
+                    if path.dbName == "Single" && path.collectionName == "Collection" {
+                        // This codepath is here to show how the Swift driver can be used with
+                        // MongoDB's single collection pattern. With this pattern, documents with
+                        // different shapes are stored in the same collection - each with a field
+                        // named "type" which indicates what shape the structure should match. The
+                        // pattern is also referred to as "polymorphic collections"
+                        
+                        if let type = doc["type"] {
+                            switch type {
+                            case "basket":
+                                if let basket = basket(doc: doc) {
+                                    BasketView(basket: basket)
+                                }
+                            case "item":
+                                if let item = item(doc: doc) {
+                                    ItemView(item: item)
+                                }
+                            default:
+                                Text("Unknown doc type")
                             }
-                        case "item":
-                            if let item = item(doc: doc) {
-                                ItemView(item: item)
-                            }
-                        default:
-                            Text("Unknown doc type")
                         }
+                    } else {
+                        JSONView(doc: doc)
                     }
-                } else {
-                    JSONView(doc: doc)
+                }
+                if inProgress {
+                    ProgressView()
                 }
             }
             Spacer()
@@ -72,6 +76,10 @@ struct CollectionView: View {
         })
         .onChange(of: path, perform: { path in
             Task {
+                filterKey = ""
+                filterValue = ""
+                sortField = "_id"
+                sortAscending = false
                 await loadDocs(path)
                 await registerChangeStream()
             }
@@ -101,6 +109,7 @@ struct CollectionView: View {
     }
     
     func loadDocs(_ path: Path? = nil) async {
+        inProgress = true
         docs = [BSONDocument]()
         if !errorMessage.isEmpty {
             errorMessage = ""
@@ -118,6 +127,7 @@ struct CollectionView: View {
                 errorMessage = "Failed to read collection documents: \(error.localizedDescription)"
             }
         }
+        inProgress = false
     }
     
     func registerChangeStream() async {
