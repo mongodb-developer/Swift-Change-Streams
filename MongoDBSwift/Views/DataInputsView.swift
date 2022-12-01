@@ -16,6 +16,7 @@ struct DataInputsView: View {
     @Binding var filterIntValue: Int
     @Binding var filterDoubleValue: Double
     @Binding var docCount: Int
+    @Binding var enabledChangeStreams: Bool
     let refreshData: () -> Void
     
     let inputTypeOptions = ["String", "Int", "Float"]
@@ -67,17 +68,18 @@ struct DataInputsView: View {
                     .textFieldStyle(.roundedBorder)
                     .padding(4)
                 Spacer()
-                Button() {
-                    inProgress = true
-                    refreshData()
-                    inProgress = false
-                } label: {
-                    Image(systemName: "arrow.clockwise.circle")
-                }
-                .disabled(inProgress)
-                .buttonStyle(.borderedProminent)
-                .padding(4)
+                Toggle("Enable change streams?", isOn: $enabledChangeStreams)
             }
+            Button() {
+                inProgress = true
+                refreshData()
+                inProgress = false
+            } label: {
+                Label("Load documents", systemImage: "arrow.clockwise.circle")
+            }
+            .disabled(inProgress)
+            .buttonStyle(.borderedProminent)
+            .padding(4)
         }
     }
 }
@@ -93,6 +95,7 @@ struct DataInputsView_Previews: PreviewProvider {
             filterIntValue: .constant(0),
             filterDoubleValue: .constant(0.0),
             docCount: .constant(10),
+            enabledChangeStreams: .constant(true),
             refreshData: {})
     }
 }

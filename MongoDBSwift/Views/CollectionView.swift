@@ -27,6 +27,7 @@ struct CollectionView: View {
     @State private var changeStream: ChangeStream<ChangeStreamEvent<BSONDocument>>?
     @State private var latestChangeEvent: ChangeStreamEvent<BSONDocument>?
     @State private var showingChangeEvent = false
+    @State private var enabledChangeStreams = false
     @State private var inProgress = false
     
     var body: some View {
@@ -40,12 +41,14 @@ struct CollectionView: View {
                 filterIntValue: $filterIntValue,
                 filterDoubleValue: $filterDoubleValue,
                 docCount: $docCount,
+                enabledChangeStreams: $enabledChangeStreams,
                 refreshData: {
                     Task {
                         await loadDocs()
                     }
                 }
             )
+            .padding()
             ZStack {
                 List(docs, id: \.hashValue) { doc in
                     if path.dbName == "Single" && path.collectionName == "Collection" {
@@ -96,6 +99,11 @@ struct CollectionView: View {
                 sortField = "_id"
                 sortAscending = false
                 await loadDocs(path)
+                await registerChangeStream()
+            }
+        })
+        .onChange(of: enabledChangeStreams, perform: { _ in
+            Task {
                 await registerChangeStream()
             }
         })
@@ -166,20 +174,22 @@ struct CollectionView: View {
             _ = changeStream.kill()
             self.changeStream = nil
         }
-        do {
-            let changeStreamOptions = ChangeStreamOptions(fullDocument: .updateLookup)
-            changeStream = try await collection?.watch(options: changeStreamOptions)
-            _ = changeStream?.forEach({ changeEvent in
-                withAnimation {
-                    latestChangeEvent = changeEvent
-                    showingChangeEvent = true
-                    Task {
-                        await loadDocs()
+        if enabledChangeStreams {
+            do {
+                let changeStreamOptions = ChangeStreamOptions(fullDocument: .updateLookup)
+                changeStream = try await collection?.watch(options: changeStreamOptions)
+                _ = changeStream?.forEach({ changeEvent in
+                    withAnimation {
+                        latestChangeEvent = changeEvent
+                        showingChangeEvent = true
+                        Task {
+                            await loadDocs()
+                        }
                     }
-                }
-            })
-        } catch {
-            errorMessage = "Failed to register change stream: \(error.localizedDescription)"
+                })
+            } catch {
+                errorMessage = "Failed to register change stream: \(error.localizedDescription)"
+            }
         }
     }
     
