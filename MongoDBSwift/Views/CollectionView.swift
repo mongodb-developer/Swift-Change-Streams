@@ -18,7 +18,6 @@ struct CollectionView: View {
     @State private var sortField = "_id"
     @State private var sortAscending = false
     @State private var filterKey = ""
-//    @State private var queryValue = QueryValue.string("")
     @State private var filterType = "String"
     @State private var filterStringValue = ""
     @State private var filterIntValue = 0
@@ -35,13 +34,11 @@ struct CollectionView: View {
             DataInputsView(
                 sortField: $sortField,
                 sortAscending: $sortAscending,
-//                queryValue: $queryValue,
                 filterKey: $filterKey,
                 filterType: $filterType,
                 filterStringValue: $filterStringValue,
                 filterIntValue: $filterIntValue,
                 filterDoubleValue: $filterDoubleValue,
-//                filterValue: $filterValue,
                 docCount: $docCount,
                 refreshData: {
                     Task {
@@ -95,7 +92,6 @@ struct CollectionView: View {
             Task {
                 filterKey = ""
                 filterValue = ""
-//                queryValue = .string("")
                 filterType = "String"
                 sortField = "_id"
                 sortAscending = false
@@ -136,16 +132,6 @@ struct CollectionView: View {
         let db = client.db(path?.dbName ?? self.path.dbName)
         collection = db.collection(path?.collectionName ?? self.path.collectionName)
         var bsonFilterValue: BSON?
-//        if !filterKey.isEmpty {
-//            switch queryValue {
-//            case .string(let string):
-//                bsonFilterValue = BSON(stringLiteral: string)
-//            case .int(let int):
-//                bsonFilterValue = BSON(int)
-//            case .float(let float):
-//                bsonFilterValue = BSON(floatLiteral: Double(float))
-//            }
-//        }
         if !filterKey.isEmpty {
             switch filterType {
             case "String":
@@ -162,7 +148,6 @@ struct CollectionView: View {
         if let bsonFilterValue {
             query = [filterKey: bsonFilterValue]
         }
-//        let query: BSONDocument = filterKey.isEmpty || filterValue.isEmpty ? [:] : [filterKey: filterKey]
         let options = FindOptions(limit: docCount, sort: [sortField: sortAscending ? 1 : -1])
         if let collection = collection {
             do {

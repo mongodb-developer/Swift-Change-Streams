@@ -10,10 +10,8 @@ import SwiftUI
 struct DataInputsView: View {
     @Binding var sortField: String
     @Binding var sortAscending: Bool
-//    @Binding var queryValue: QueryValue
     @Binding var filterKey: String
     @Binding var filterType: String
-//    @Binding var filterValue: String
     @Binding var filterStringValue: String
     @Binding var filterIntValue: Int
     @Binding var filterDoubleValue: Double
@@ -55,25 +53,6 @@ struct DataInputsView: View {
                     .textFieldStyle(.roundedBorder)
                     .padding(4)
             }
-//            switch queryValue {
-//            case .string:
-//                TextField("Field value", text: $queryValue.string)
-//                    .textFieldStyle(.roundedBorder)
-//                    .padding(4)
-//            case .int:
-//                TextField("Field value", value: $queryValue.int, format: .number)
-//                    .textFieldStyle(.roundedBorder)
-//                    .padding(4)
-//            case .float:
-//                TextField("Field value", value: $queryValue.float, format: .number)
-//                    .textFieldStyle(.roundedBorder)
-//                    .padding(4)
-//            }
-//            HStack {
-//                TextField("Filter value", text: $filterValue)
-//                    .textFieldStyle(.roundedBorder)
-//                    .padding(4)
-//            }
             HStack {
                 TextField("Sort string", text: $sortField)
                     .textFieldStyle(.roundedBorder)
@@ -103,27 +82,17 @@ struct DataInputsView: View {
     }
 }
 
-//extension DataInputsView {
-//    init(sortField: Binding<String>, sortAscending: Binding<Bool>, queryValue: Binding<QueryValue>, filterKey: Binding<String>, filterValue: Binding<String>, docCount: Binding<Int>, _ refreshData: @escaping () -> Void) {
-//        self._sortField = sortField
-//        self._sortAscending = sortAscending
-//        self._queryValue = queryValue
-//        self._filterKey = filterKey
-//        self._filterValue = filterValue
-//        self._docCount = docCount
-//        self.refreshData = refreshData
-//    }
-//}
-
-//struct DataInputsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DataInputsView(
-//            sortField: .constant("_id"),
-//            sortAscending: .constant(false),
-//            queryValue: .constant(QueryValue.string("")),
-//            filterKey: .constant(""),
-//            filterValue: .constant(""),
-//            docCount: .constant(10),
-//            refreshData: {})
-//    }
-//}
+struct DataInputsView_Previews: PreviewProvider {
+    static var previews: some View {
+        DataInputsView(
+            sortField: .constant("_id"),
+            sortAscending: .constant(false),
+            filterKey: .constant(""),
+            filterType: .constant("String"),
+            filterStringValue: .constant(""),
+            filterIntValue: .constant(0),
+            filterDoubleValue: .constant(0.0),
+            docCount: .constant(10),
+            refreshData: {})
+    }
+}
