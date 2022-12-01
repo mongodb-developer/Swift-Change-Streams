@@ -96,6 +96,7 @@ struct ChangeEventView: View {
         .padding()
         .clipShape(RoundedRectangle(cornerRadius: 25))
         .background(color)
+        .frame(minHeight: 600)
     }
     
     let monoFont = Font
