@@ -55,7 +55,6 @@ struct CollectionsView: View {
         let db = client.db(dbName)
         do {
             let collections = try await db.listCollections()
-            // TODO: Use map?
             let collectionsArray = try await collections.toArray()
             self.collections = [String]()
             collectionsArray.forEach { collection in

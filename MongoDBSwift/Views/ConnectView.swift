@@ -76,8 +76,8 @@ struct ConnectView: View {
     
 }
 
-//struct ConnectView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ConnectView()
-//    }
-//}
+struct ConnectView_Previews: PreviewProvider {
+    static var previews: some View {
+        ConnectView(client: .constant(nil))
+    }
+}

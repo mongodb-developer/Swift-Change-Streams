@@ -9,7 +9,8 @@ import Foundation
 
 extension String {
     func maskPassword() -> String {
-        // Expect string to be of this form: "mongodb+srv://username:password@cluster-address"
+        // Expect string to be of this form: "mongodb+srv://username:password@cluster-address" or
+        // mongodb://localhost
         let stringRange = NSRange(
             self.startIndex..<self.endIndex,
             in: self
@@ -25,7 +26,7 @@ extension String {
             range: stringRange
         )
         guard let match = matches.first else {
-            return "Failed to find first element"
+            return self
         }
         var components = [String]()
         for rangeIndex in 0..<match.numberOfRanges {

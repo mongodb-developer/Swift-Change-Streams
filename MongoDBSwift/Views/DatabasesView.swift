@@ -74,8 +74,13 @@ struct DatabasesView: View {
     }
 }
 
-//struct DatabasesView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DatabasesView()
-//    }
-//}
+struct DatabasesView_Previews: PreviewProvider {
+    static var previews: some View {
+        if !PreviewValues.uri.isEmpty {
+            let client = try! MongoClientExt(name: PreviewValues.name, uri: PreviewValues.uri).client
+            DatabasesView(client: client!, dbName: .constant("Database"), collectionName: .constant("Collection"))
+        } else {
+            Text("Need to set PreviewValues.uri to enable preview")
+        }
+    }
+}

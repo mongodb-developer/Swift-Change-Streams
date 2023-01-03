@@ -14,6 +14,7 @@
 		0A0331902934FBEC006787D0 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A03318F2934FBEC006787D0 /* Item.swift */; };
 		0A0331942934FC4D006787D0 /* BasketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0331932934FC4D006787D0 /* BasketView.swift */; };
 		0A03319629350334006787D0 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A03319529350334006787D0 /* ItemView.swift */; };
+		0A1D830C2938F8F100F932D6 /* PreviewValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1D830B2938F8F100F932D6 /* PreviewValues.swift */; };
 		0A3549B2293774EC008B4E69 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3549B1293774EC008B4E69 /* String.swift */; };
 		0AA38B7C292E2189008C9A00 /* MongoDBSwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA38B7B292E2189008C9A00 /* MongoDBSwiftApp.swift */; };
 		0AA38B7E292E2189008C9A00 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA38B7D292E2189008C9A00 /* ContentView.swift */; };
@@ -43,6 +44,7 @@
 		0A03318F2934FBEC006787D0 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		0A0331932934FC4D006787D0 /* BasketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketView.swift; sourceTree = "<group>"; };
 		0A03319529350334006787D0 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		0A1D830B2938F8F100F932D6 /* PreviewValues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewValues.swift; sourceTree = "<group>"; };
 		0A3549B1293774EC008B4E69 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		0AA38B78292E2189008C9A00 /* MongoDBSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MongoDBSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AA38B7B292E2189008C9A00 /* MongoDBSwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MongoDBSwiftApp.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				0A1D830A2938EC6900F932D6 /* SingleCollection */,
 				0AA38B92292E2796008C9A00 /* MongoClientExt.swift */,
 				0AA38BB0292F0034008C9A00 /* Path.swift */,
+				0A1D830B2938F8F100F932D6 /* PreviewValues.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				0A03318E2934FB66006787D0 /* Basket.swift in Sources */,
 				0AA38B98292E2DB4008C9A00 /* DisconnectButton.swift in Sources */,
 				0AA38B9A292E85AD008C9A00 /* DatabasesView.swift in Sources */,
+				0A1D830C2938F8F100F932D6 /* PreviewValues.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

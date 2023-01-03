@@ -28,8 +28,8 @@ struct DisconnectButton: View {
     }
 }
 
-//struct DisconnectButton_Previews: PreviewProvider {
-//    static var previews: some View {
-//        DisconnectButton()
-//    }
-//}
+struct DisconnectButton_Previews: PreviewProvider {
+    static var previews: some View {
+        DisconnectButton(client: .constant(nil))
+    }
+}
