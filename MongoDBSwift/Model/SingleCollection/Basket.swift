@@ -9,12 +9,12 @@ import Foundation
 
 struct Basket: Codable {
     let _id: String
-    let type: String
+    let docType: String
     let customer: String
     
     init(_id: String, customer: String) {
         self._id = _id
-        self.type = "basket"
+        docType = "basket"
         self.customer = customer
     }
 }

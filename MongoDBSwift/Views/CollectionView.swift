@@ -58,8 +58,8 @@ struct CollectionView: View {
                         // named "type" which indicates what shape the structure should match. The
                         // pattern is also referred to as "polymorphic collections"
                         
-                        if let type = doc["type"] {
-                            switch type {
+                        if let docType = doc["docType"] {
+                            switch docType {
                             case "basket":
                                 if let basket = basket(doc: doc) {
                                     BasketView(basket: basket)

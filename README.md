@@ -17,12 +17,12 @@ If a document is added, changed, or deleted in the collection being viewed then 
 
 ## Easter Egg
 
-The app is also designed to demonstrate how the [MongoDB Swift driver](https://github.com/mongodb/mongo-swift-driver) can be used with MongoDB's single collection pattern. With this pattern, documents with different shapes are stored in the same collection - each with a field named "type" which indicates what shape the structure should match. The pattern is also referred to as "polymorphic collections".
+The app is also designed to demonstrate how the [MongoDB Swift driver](https://github.com/mongodb/mongo-swift-driver) can be used with MongoDB's single collection pattern. With this pattern, documents with different shapes are stored in the same collection - each with a field named "docType" which indicates what shape the structure should match. The pattern is also referred to as "polymorphic collections".
 
 To try that polymorphic behavior out, add these documents to a collection called `Collection` in a database named `Single`:
 
 ```javascript
-{ _id: 'basket1', type: 'basket', customer: 'cust101' }
-{ _id: 'basket1-item1', type: 'item', name: 'Fish', quantity: 5 }
-{ _id: 'basket1-item2', type: 'item', name: 'Chips', quantity: 3 }
+{ _id: 'basket1', docType: 'basket', customer: 'cust101' }
+{ _id: 'basket1-item1', docType: 'item', name: 'Fish', quantity: 5 }
+{ _id: 'basket1-item2', docType: 'item', name: 'Chips', quantity: 3 }
 ```
