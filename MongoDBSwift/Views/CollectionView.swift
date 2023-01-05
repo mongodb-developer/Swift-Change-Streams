@@ -61,13 +61,9 @@ struct CollectionView: View {
                         if let docType = doc["docType"] {
                             switch docType {
                             case "basket":
-                                if let basket = basket(doc: doc) {
-                                    BasketView(basket: basket)
-                                }
+                                BasketView(basket: Basket(doc: doc))
                             case "item":
-                                if let item = item(doc: doc) {
-                                    ItemView(item: item)
-                                }
+                                ItemView(item: Item(doc: doc))
                             default:
                                 Text("Unknown doc type")
                             }
@@ -110,24 +106,6 @@ struct CollectionView: View {
         .task {
             await loadDocs()
             await registerChangeStream()
-        }
-    }
-    
-    private func basket(doc: BSONDocument) -> Basket? {
-        do {
-            return try BSONDecoder().decode(Basket.self, from: doc)
-        } catch {
-            print("Failed to convert BSON to a Basket: \(error.localizedDescription)")
-            return nil
-        }
-    }
-    
-    private func item(doc: BSONDocument) -> Item? {
-        do {
-            return try BSONDecoder().decode(Item.self, from: doc)
-        } catch {
-            print("Failed to convert BSON to a Item: \(error.localizedDescription)")
-            return nil
         }
     }
     
