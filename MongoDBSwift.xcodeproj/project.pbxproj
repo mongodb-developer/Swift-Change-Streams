@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0A033147292FADCC006787D0 /* DataInputsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A033146292FADCC006787D0 /* DataInputsView.swift */; };
-		0A033149292FD2E3006787D0 /* AnyDoc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A033148292FD2E3006787D0 /* AnyDoc.swift */; };
 		0A03314B292FE21E006787D0 /* ChangeEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A03314A292FE21E006787D0 /* ChangeEventView.swift */; };
 		0A03318E2934FB66006787D0 /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A03318D2934FB66006787D0 /* Basket.swift */; };
 		0A0331902934FBEC006787D0 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A03318F2934FBEC006787D0 /* Item.swift */; };
@@ -38,7 +37,6 @@
 
 /* Begin PBXFileReference section */
 		0A033146292FADCC006787D0 /* DataInputsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataInputsView.swift; sourceTree = "<group>"; };
-		0A033148292FD2E3006787D0 /* AnyDoc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyDoc.swift; sourceTree = "<group>"; };
 		0A03314A292FE21E006787D0 /* ChangeEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEventView.swift; sourceTree = "<group>"; };
 		0A03318D2934FB66006787D0 /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
 		0A03318F2934FBEC006787D0 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -82,7 +80,6 @@
 		0A1D830A2938EC6900F932D6 /* SingleCollection */ = {
 			isa = PBXGroup;
 			children = (
-				0A033148292FD2E3006787D0 /* AnyDoc.swift */,
 				0A03318D2934FB66006787D0 /* Basket.swift */,
 				0A03318F2934FBEC006787D0 /* Item.swift */,
 			);
@@ -252,7 +249,6 @@
 				0A03319629350334006787D0 /* ItemView.swift in Sources */,
 				0AA38BA5292EDA42008C9A00 /* BSONDocument.swift in Sources */,
 				0A033147292FADCC006787D0 /* DataInputsView.swift in Sources */,
-				0A033149292FD2E3006787D0 /* AnyDoc.swift in Sources */,
 				0AA38B9C292E9396008C9A00 /* CollectionsView.swift in Sources */,
 				0AA38B7E292E2189008C9A00 /* ContentView.swift in Sources */,
 				0AA38BA9292EDFD1008C9A00 /* JSONView.swift in Sources */,

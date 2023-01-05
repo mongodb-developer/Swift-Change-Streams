@@ -10,6 +10,7 @@ import MongoSwiftSync
 
 struct DisconnectButton: View {
     @Binding var client: MongoClientExt?
+    @Binding var path: Path
     
     @State private var inProgress = false
     
@@ -18,6 +19,8 @@ struct DisconnectButton: View {
             Button("Disconnect \(client.name)") {
                 inProgress = true
                 let _ = client.client?.close()
+                path.dbName = ""
+                path.collectionName = ""
                 cleanupMongoSwift()
                 self.client = nil
                 inProgress = false
@@ -30,6 +33,6 @@ struct DisconnectButton: View {
 
 struct DisconnectButton_Previews: PreviewProvider {
     static var previews: some View {
-        DisconnectButton(client: .constant(nil))
+        DisconnectButton(client: .constant(nil), path: .constant(Path()))
     }
 }

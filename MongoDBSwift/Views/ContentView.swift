@@ -21,7 +21,7 @@ struct ContentView: View {
                 if let client {
                     if let mongoClient = client.client {
                         VStack {
-                            DisconnectButton(client: self.$client)
+                            DisconnectButton(client: self.$client, path: self.$path)
                             DatabasesView(client: mongoClient, dbName: $path.dbName, collectionName: $path.collectionName)
                             Spacer()
                         }
