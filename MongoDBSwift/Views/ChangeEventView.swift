@@ -14,7 +14,6 @@ struct ChangeEventView: View {
     let event: ChangeStreamEvent<BSONDocument>
     var color: Color {
         switch event.operationType {
-            
         case .insert:
             return .green
         case .update:

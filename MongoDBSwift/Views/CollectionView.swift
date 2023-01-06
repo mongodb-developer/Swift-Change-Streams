@@ -148,6 +148,7 @@ struct CollectionView: View {
     }
     
     func registerChangeStream() async {
+        // If the view already has an active change stream, close it down
         if let changeStream = changeStream {
             _ = changeStream.kill()
             self.changeStream = nil
